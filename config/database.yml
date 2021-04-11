@@ -84,5 +84,5 @@ test:
 production:
   <<: *default
   database: example_production
-  username: example
-  password: <%= ENV['EXAMPLE_DATABASE_PASSWORD'] %>
+  username: <%= ENV.fetch('PG_USER') %>
+  password: <%= ENV.fetch('PG_PASSWORD') %>
